@@ -35,6 +35,34 @@ How the AI operates tools (discover → choose → call → recover), how to kee
 
 ---
 
+## 做出来能完成什么 · What you can build
+
+把这个设计落地后，你的系统会获得这些能力：
+
+- **对话即操作**：用户一句话完成查询/创建/修改/删除，结果以结构化卡片呈现，不需要教用户学菜单
+- **建表即上线**：数据库新增一张表，AI 自动发现并学会操作，业务扩展不用改前端
+- **AI 可以安全地接触真实数据**：不编造（所有回答基于工具真实结果）、不可逆操作先确认、权限按角色拦截、全程审计——达到"敢放进生产环境"的标准
+- **批量脏活交给 AI**：文件批量导入、数据清洗、Excel 报表生成，AI 编排原子指令完成
+- **人永远有最终决定权**：AI 只能创建草稿、删除已取消/已拒绝的终态记录；所有业务状态推进由人在操作台完成
+- **多租户天然隔离**：每个租户的 AI 助手只能操作自己租户的数据，AI 本身无需感知租户
+- **长对话不劣化**：上下文超限自动降级（落盘 / 按需读回），任务永不中断
+- **每一步都可追溯**：所有工具调用进入审计——谁、何时、做了什么、结果如何，全程留痕
+
+一句话：把"会聊天的 AI"，变成"敢让它碰生产数据的 AI"。
+
+In short, this design turns "an AI that chats" into "an AI you trust with production data."
+
+- **Conversation is the operation**: one sentence completes query/create/update/delete, with results rendered as structured cards
+- **Create a table, it goes live**: add a table and the AI discovers and learns it — no frontend changes
+- **The AI can safely touch real data**: no fabrication (answers come from real tool results), confirmation before irreversible actions, role-based permission gates, full auditing
+- **Batch grunt work goes to the AI**: file imports, data cleaning, Excel report generation via atomic-instruction scripts
+- **Humans keep the final say**: the AI can only create drafts and delete cancelled/rejected terminal records; every business state transition happens in the console, by a human
+- **Tenants are isolated by default**: each tenant's AI can only touch its own data, and the AI never even needs to know tenancy exists
+- **Long sessions don't degrade**: context overflow degrades gracefully (offload / read back on demand), tasks are never interrupted
+- **Every step is traceable**: all tool calls are audited — who, when, what, and the outcome
+
+---
+
 ## 背景项目 · Background project
 
 思路来自 [启禾 OS · 仓迹](https://www.qihebook.cloud) —— 一个 AI 原生的进销存 ERP：自然语言是主要操作界面，传统表单是辅助通道。
