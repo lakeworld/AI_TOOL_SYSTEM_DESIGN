@@ -71,8 +71,8 @@ The ideas come from [Qihe OS · Cangji](https://www.qihebook.cloud), an AI-nativ
 
 ---
 
-## 版权 · Copyright
+## 版权 · License
 
-文档内容可自由引用、转载与再创作，注明出处即可。思路可复用，代码会过时。
+本项目采用 [MIT License](./LICENSE)。文档内容可自由引用、转载与再创作；思路可复用，代码会过时。
 
-The content is free to quote, repost, and remix with attribution. Ideas are reusable; code goes stale.
+Licensed under the [MIT License](./LICENSE). The content is free to quote, repost, and remix; ideas are reusable, code goes stale.
